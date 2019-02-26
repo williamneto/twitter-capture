@@ -26,7 +26,7 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 from os import getpid, mkdir
 from os.path import abspath, dirname, exists, realpath
 from src.collect import collect
-from src.logger import Logger
+#from src.logger import Logger
 from src.stream import stream
 # from src.trends import trending_topics
 from time import time
@@ -70,7 +70,7 @@ if __name__ == '__main__':
 	if args.log: # start logging system output
 		log_file = abspath(args.log)
 		mkdir(log_path) if not exists (log_path) else None
-		sys.stdout = sys.stderr = sys.stdin = Logger(log_file, 'a')
+		sys.stdout = sys.stderr = sys.stdin 
 
 	if args.type == 'stream':
 		stream(query=args.query,

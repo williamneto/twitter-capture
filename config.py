@@ -15,16 +15,16 @@ However, if another URL is given on execution time with the
 "--url" argument, the former will be ignored for the latter.
 """
 
-# APP_KEYS = [ # array of arrays
-	# ['MY_FIRST_APP_KEY', 'MY_FIRST_APP_SECRET'],
-	# ['MY_SECOND_APP_KEY', 'MY_SECOND_APP_SECRET']]
+APP_KEYS = [ 
+	['UFnObKlRXS8SzHST8qYX2SJZw', 'mgUcSX2oh3ME67yc9uU0FjtdWWOwqGZDl7Y1O9l6Ez3YZcI1dp']
+]
 
-# APP_KEY = 'MY_TWITTER_APP_KEY'
-# APP_SECRET = 'MY_TWITTER_APP_SECRET'
-# OAUTH_TOKEN = 'MY_TWITTER_TOKEN_KEY'
-# OAUTH_TOKEN_SECRET = 'MY_TWITTER_TOKEN_SECRET'
+APP_KEY = 'UFnObKlRXS8SzHST8qYX2SJZw'
+APP_SECRET = 'mgUcSX2oh3ME67yc9uU0FjtdWWOwqGZDl7Y1O9l6Ez3YZcI1dp'
+OAUTH_TOKEN = '920756820590891008-kAPdt2RHzqis6k27aQ60mtYlCIKlRcF'
+OAUTH_TOKEN_SECRET = '7sUwX6PKQSQwZ62vhUEhLXGn5NvXaBUWQOjYZFYeJyxAs'
 
-# POST_URL = 'https://inep-api-v2-dev.herokuapp.com/v2/tweets'
+POST_URL = 'http://127.0.0.1:5000/receive_tweets'
 
 # LOG_OUTPUT = False # default: True
 # STREAM_RTS = False # retweets, default: True

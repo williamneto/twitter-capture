@@ -124,7 +124,7 @@ def collect(query, query_type='terms', lang=None, geocode=None, max_id=None, sin
 						for status in some_results:
 							captured += 1 # tweets captured in this query
 							total += 1 # tweets captured in all queries
-							first_id = status['id'] if captured == 1 else fist_id
+							first_id = status['id'] # if captured == 1 else fist_id
 							from_date = status['created_at'].replace(' +0000','')
 							maximum = (status['id'] - 1)
 							tweet = json.dumps(status)

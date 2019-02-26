@@ -75,10 +75,12 @@ def post_tweets(array, url):
 	Send tweets array to API endpoint.
 	'''
 	while True: # try until succeeded
+		#import pdb; pdb.set_trace()
 		response = post(url, json=array)
+		
 		if '200' not in str(response):
 			print('\nWarning: error sending tweets to API endpoint.')
-			sleep_seconds(tts)
+			sleep_seconds(5)
 		else: break
 
 def sleep_seconds(tts):
