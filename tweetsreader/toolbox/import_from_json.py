@@ -42,7 +42,7 @@ class ImportFromJson(object):
         if len(Tweet.objects.all().filter(id_str=tweet["id_str"])) == 0:
             tweet_obj = Tweet()
             tweet_obj.id_str = tweet["id_str"]
-            tweet_obj.credated_at = self.str_to_date(tweet["created_at"])
+            tweet_obj.created_at = self.str_to_date(tweet["created_at"])
             tweet_obj.tag = self.tag
             tweet_obj.user = user
             tweet_obj.text = tweet["text"]
@@ -74,7 +74,7 @@ class ImportFromJson(object):
                     
                     quoted_obj = Tweet()
                     quoted_obj.id_str = tweet["id_str"]
-                    quoted_obj.credated_at = self.str_to_date(tweet["quoted_status"]["created_at"])
+                    quoted_obj.created_at = self.str_to_date(tweet["quoted_status"]["created_at"])
                     quoted_obj.user = quoted_user_obj
                     quoted_obj.tag = self.tag
                     quoted_obj.text = tweet["quoted_status"]["text"]

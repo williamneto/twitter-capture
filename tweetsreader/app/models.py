@@ -47,9 +47,9 @@ class Tweet(Model):
     id_str = models.CharField(
         max_length=30
     )
-    credated_at = models.DateTimeField(
+    created_at = models.DateTimeField(
         default=None,
-        null=True
+        null=False
     )
     user = models.ForeignKey(
         User,

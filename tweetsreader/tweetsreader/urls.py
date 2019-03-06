@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import django
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+
+from tweetsreader import settings
+from app.views import ViewTags 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tags/', ViewTags.as_view()),
+
+    path('static/(?P<path>.*)', django.views.static.serve, {'document_root': settings.STATIC_ROOT}),
 ]
