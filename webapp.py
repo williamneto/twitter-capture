@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 @app.route("/receive_tweets", methods=["GET", "POST"])
 def receive_tweets():
-    with open("tweets.json") as file:
+    with open("tuiutinotazero.json") as file:
         current_data = json.load(file)
 
-    with open("tweets.json", "w") as file:
+    with open("tuiutinotazero.json", "w") as file:
         new_data = json.loads(request.get_json()[0])
         current_data.append(new_data)
 

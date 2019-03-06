@@ -1,0 +1,36 @@
+informações relevantes a serem avaliadas em um tweet:
+- número de retweets - retweet_count
+- número de likes - favorite_count
+- todas as hashtags
+-perfis mais citados
+
+e do autor do tweet:
+- nome - screen_name e name
+- localização - location
+- número de seguidores - followers_count
+
+- armazenar em tabela todos os tweeets
+- observar volume de tweets ao longo de um periodo de tempo
+- definir nós - perfis a partir do número de seguidores e RTs, tweets a partir do número de RTs e favs
+__________________________________
+
+captura inicia as 22:40, capturando intercaladamente 10 minutos de cada hashtag
+captura finalizada 00:40
+
+____________________________________
+
+bolsonarotmnc 18:58
+bolsonarotmj: 19:10
+bolsonarotmnc 18:21
+bolsonarotmj: 19:31
+bolsonarotmnc: 19:41
+bolsonarotmj 19:51
+bolsonarotmnc: 20:06
+bolsonarotmj: 20:16
+bolsonarotmnc: 20:26
+bolsonarotmj: 20:36
+bolsonarotmnc: 20:46
+bolsonarotmj: 20:56
+bolsonarotmnc: 23:05
+
+unidos da tijuca
