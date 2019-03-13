@@ -30,16 +30,16 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>Tw</b>R</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Tweets</b>READER</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -75,16 +75,16 @@
         <li class="treeview active">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>Tags</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> {{ tag }}</a></li>
+            {% for t in all_tags_names %}
+            <li><a href="/tags/?tag={{ t }}"><i class="fa fa-circle-o"></i>{{ t }}</a></li>
+            {% endfor %}
           </ul>
         </li>
         

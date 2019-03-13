@@ -53,7 +53,7 @@ class ImportFromJson(object):
             tweet_obj.coordinates = tweet["coordinates"]
             tweet_obj.place = tweet["place"]
 
-            if tweet["is_quote_status"]:
+            if tweet["is_quote_status"] and "quoted_status" in tweet:
                 if  len(Tweet.objects.all().filter(id_str=tweet["quoted_status"]["id_str"])) == 0:
                     if len(User.objects.all().filter(id_str=tweet["quoted_status"]["user"]["id_str"])) == 0:
                         quoted_user_obj = User()
@@ -84,10 +84,16 @@ class ImportFromJson(object):
                     quoted_obj.geo = tweet["quoted_status"]["geo"]
                     quoted_obj.coordinates = tweet["quoted_status"]["coordinates"]
                     quoted_obj.place = tweet["quoted_status"]["place"]
-                    quoted_obj.quote_count = tweet["quoted_status"]["quote_count"]
-                    quoted_obj.reply_count = tweet["quoted_status"]["reply_count"]
-                    quoted_obj.retweet_count = tweet["quoted_status"]["retweet_count"]
-                    quoted_obj.favorite_count = tweet["quoted_status"]["favorite_count"]
+
+                    if "quote_count" in tweet:
+                        quoted_obj.quote_count = tweet["quote_count"]
+                    if "reply_count" in tweet:
+                        quoted_obj.reply_count = tweet["reply_count"]
+                    if "retweet_count" in tweet:
+                        quoted_obj.retweet_count = tweet["retweet_count"]
+                    if "favorite_count" in tweet:
+                        quoted_obj.favorite_count = tweet["favorite_count"]
+
                     quoted_obj.entities = tweet["quoted_status"]["entities"]
                     quoted_obj.save()
                 else:
@@ -96,13 +102,18 @@ class ImportFromJson(object):
                 tweet_obj.quoted_status_id = tweet["quoted_status_id_str"]
                 tweet_obj.is_quote_status = tweet["is_quote_status"]
                 tweet_obj.quoted_status = quoted_obj
-                tweet_obj.quoted_status_permalink = tweet["quoted_status_permalink"]["url"]
+                if "quoted_status_permalink" in tweet:
+                    tweet_obj.quoted_status_permalink = tweet["quoted_status_permalink"]["url"]
                 tweet_obj.quoted_status_id = tweet["quoted_status_id"]
             
-            tweet_obj.quote_count = tweet["quote_count"]
-            tweet_obj.reply_count = tweet["reply_count"]
-            tweet_obj.retweet_count = tweet["retweet_count"]
-            tweet_obj.favorite_count = tweet["favorite_count"]
+            if "quote_count" in tweet:
+                tweet_obj.quote_count = tweet["quote_count"]
+            if "reply_count" in tweet:
+                tweet_obj.reply_count = tweet["reply_count"]
+            if "retweet_count" in tweet:
+                tweet_obj.retweet_count = tweet["retweet_count"]
+            if "favorite_count" in tweet:
+                tweet_obj.favorite_count = tweet["favorite_count"]
             tweet_obj.entities = tweet["entities"]
             tweet_obj.save()
 

@@ -1,6 +1,6 @@
 import json
 
-FILE_NAME = "mangueira.json"
+FILE_NAME = "tweetsreader/tweets/euapoionovaprevidencia.json"
 
 with open(FILE_NAME) as file:
     data = json.load(file)

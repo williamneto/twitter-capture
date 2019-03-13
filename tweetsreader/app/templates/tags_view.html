@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} {{ title }} {% endblock %}
+{% block title %} TwR - {{ tag }} {% endblock %}
 
 {% block content %}
 <div class="row">
@@ -7,8 +7,8 @@
         <!-- LINE CHART -->
         <div class="box box-info">
         <div class="box-header with-border">
-            <input type="hidden" id="tags" value="{{ tags }}">
-            <h3 class="box-title">Line Chart</h3>
+            <input type="hidden" id="tags" value="{{ tag }}">
+            <h3 class="box-title">{{ tag }} - {{ tweets_for_tag }} tweets </h3>
 
             <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -18,7 +18,7 @@
         </div>
         <div class="box-body">
             <div class="chart">
-            <canvas id="lineChart" style="height:250px"></canvas>
+            <canvas id="lineChart" style="height:400px"></canvas>
             </div>
         </div>
         <!-- /.box-body -->

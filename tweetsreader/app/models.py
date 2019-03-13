@@ -114,3 +114,7 @@ class Tweet(Model):
     )
     entities = JSONField()
 
+class Tag(models.Model):
+    name = models.CharField(
+        max_length=3000
+    )

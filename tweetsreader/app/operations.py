@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
+from pytz import timezone
 
 from app.models import Tweet, User
 
@@ -26,10 +27,12 @@ class TimeLineGraph(object):
             values = []
             for m in range(1, minutes, 10):
                 query = tweets.filter(
-                    created_at__gte=start_time + timedelta(seconds=(m-1)*60),
+                    created_at__gte=start_time + timedelta(seconds=(m-10)*60),
                     created_at__lte=start_time + timedelta(seconds=m*60)
                 )
                 dtime = start_time + timedelta(seconds=m*60)
+
+                dtime = dtime.astimezone(timezone("America/Sao_Paulo"))
                 labels.append(dtime.strftime("%H:%M:%S"))
                 values.append(len(query))
             
