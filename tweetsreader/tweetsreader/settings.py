@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tweetsreader',
-        'USER': '####',
-        'PASSWORD': '####',
+        'USER': 'root',
+        'PASSWORD': 'will242697',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8mb4'},

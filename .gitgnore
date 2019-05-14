@@ -4,6 +4,6 @@ __pycache__/
 *$py.class
 
 migrations/
-
+git
 .vscode/
 log/

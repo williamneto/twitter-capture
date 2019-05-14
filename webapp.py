@@ -27,6 +27,6 @@ def receive_tweets():
         return jsonify(current_data)
 
 if __name__ == "__main__":
-	app.run(debug=False, host="0.0.0.0")
+	app.run(debug=False, host="0.0.0.0", port=80)
 
 # python .\twitter-capture.py -q "Forças Armadas" -t stream -u "http://127.0.0.1:5000/receive_tweets?tag_save_name=forcasarmadas" --nolog

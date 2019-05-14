@@ -25,9 +25,9 @@ class TimeLineGraph(object):
 
             labels = []
             values = []
-            for m in range(1, minutes, 10):
+            for m in range(1, minutes, 1):
                 query = tweets.filter(
-                    created_at__gte=start_time + timedelta(seconds=(m-10)*60),
+                    created_at__gte=start_time + timedelta(seconds=(m-1)*60),
                     created_at__lte=start_time + timedelta(seconds=m*60)
                 )
                 dtime = start_time + timedelta(seconds=m*60)
